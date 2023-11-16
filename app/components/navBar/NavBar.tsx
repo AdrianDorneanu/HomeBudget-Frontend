@@ -26,7 +26,7 @@ export function NavBar() {
     <nav>
       <div className="navbar-title-wrapper">
         <AiFillHome className="home-icon" />
-        <h1>HomeBudget</h1>
+        <h1 className="navbar-title">HomeBudget</h1>
       </div>
 
       <NavBarList routes={routes} />
