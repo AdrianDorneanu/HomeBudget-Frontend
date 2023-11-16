@@ -3,8 +3,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 
 import "./navBarList.css";
 
-interface NavBarRoute {
-  id: string;
+export interface NavBarRoute {
   name: string;
   url: string;
 }
@@ -14,8 +13,13 @@ interface NavBarListProps {
 export function NavBarList({ routes }: NavBarListProps) {
   return (
     <ul>
-      {routes.map(({ id, name, url }: NavBarRoute) => (
-        <Link data-testid={id} className="navbar-link" key={id} href={url}>
+      {routes.map(({ name, url }: NavBarRoute, idx) => (
+        <Link
+          data-testid="navbar-link"
+          className="navbar-link"
+          key={name}
+          href={url}
+        >
           <h4 data-testid={`navbar-link-title-${name.toLowerCase()}`}>
             {name}
           </h4>
