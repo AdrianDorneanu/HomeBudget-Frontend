@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+
+@layer base {
+  nav {
+    @apply rounded-md h-full bg-gradient-to-b from-gray-950 to-gray-800;
+  }
+
+  h1 {
+    @apply text-3xl text-white font-bold;
+  }
+}
+
+@layer components {
+  .home-icon {
+    @apply fill-green-600 w-12 h-12 mb-4
+  }
+
+  .navbar-title-wrapper {
+    @apply flex flex-col items-center px-12 py-6
+  }
+}

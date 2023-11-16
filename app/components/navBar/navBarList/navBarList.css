@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .navbar-link {
+    @apply flex items-center justify-between text-white text-xl px-12 py-4 cursor-pointer transition ease-in-out duration-300 hover:bg-white hover:text-gray-950;
+  }
+}
