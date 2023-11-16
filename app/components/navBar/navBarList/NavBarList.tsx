@@ -13,7 +13,7 @@ interface NavBarListProps {
 export function NavBarList({ routes }: NavBarListProps) {
   return (
     <ul>
-      {routes.map(({ name, url }: NavBarRoute, idx) => (
+      {routes.map(({ name, url }: NavBarRoute) => (
         <Link
           data-testid="navbar-link"
           className="navbar-link"
