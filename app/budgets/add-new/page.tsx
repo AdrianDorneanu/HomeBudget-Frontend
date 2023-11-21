@@ -7,7 +7,7 @@ export default function AddNewBudgetPage() {
       <ContentLayout>
         <span>I am add new budget page</span>
       </ContentLayout>
-      <ActionButton href="" text="Save" />
+      <ActionButton text="Save" />
     </>
   );
 }
