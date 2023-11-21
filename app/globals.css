@@ -12,6 +12,6 @@
 
 @layer components {
   .homepage-content-wrapper {
-    @apply h-full flex-grow bg-slate-200 bg-opacity-50 rounded-xl shadow-xl px-12 py-6;
+    @apply w-full bg-slate-200 bg-opacity-50 rounded-xl shadow-xl px-12 py-6 flex flex-col;
   }
 }

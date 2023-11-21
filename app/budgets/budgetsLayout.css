@@ -1,0 +1,11 @@
+@tailwind components;
+
+@layer components {
+  .budgets-page-wrapper {
+    @apply flex flex-col flex-grow justify-center items-center;
+  }
+
+  .add-new-budget-button {
+    @apply bg-green-600 border-2 border-green-600 text-center ml-auto px-6 py-4 rounded-lg text-white font-semibold transition duration-200 ease-in hover:bg-transparent hover:text-black;
+  }
+}

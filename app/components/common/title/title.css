@@ -2,6 +2,6 @@
 
 @layer components {
   .page-title {
-    @apply text-3xl font-bold mb-8;
+    @apply text-3xl font-bold;
   }
 }
