@@ -3,7 +3,7 @@ import { ActionButton, ContentLayout, Title } from "../../components";
 export default function AddNewBudgetPage() {
   return (
     <>
-      <Title title="Add new budget"></Title>
+      <Title title="Add new budget" />
       <ContentLayout>
         <span>I am add new budget page</span>
       </ContentLayout>
