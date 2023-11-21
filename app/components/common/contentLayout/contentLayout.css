@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .content-wrapper {
+    @apply flex flex-col flex-grow justify-center items-center;
+  }
+}

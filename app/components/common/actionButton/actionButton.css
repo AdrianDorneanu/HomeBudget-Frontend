@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .action-button {
+    @apply bg-green-600 border-2 w-32 border-green-600 text-center ml-auto px-4 py-2 rounded-xl text-white font-semibold transition duration-200 ease-in hover:bg-transparent hover:text-black;
+  }
+}
