@@ -8,7 +8,12 @@ interface BudgetsListProps {
 export function BudgetsList({ budgets }: BudgetsListProps) {
   if (budgets.length === 0) {
     return (
-      <span className="no-budgets-created-text">No budgets created yet!</span>
+      <span
+        data-testid="no-budgets-created-text"
+        className="no-budgets-created-text"
+      >
+        No budgets created yet!
+      </span>
     );
   }
 
