@@ -1,4 +1,4 @@
 export * from "./navBar";
 export * from "./dashboard";
-export * from "./budgetsList";
+export * from "./budgets";
 export * from "./common";

@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .card {
+    @apply text-white flex items-center justify-between border-slate-300 bg-slate-900 px-8 py-4 rounded-xl transition duration-150 ease-in-out hover:shadow-2xl;
+  }
+}

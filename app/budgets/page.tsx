@@ -9,9 +9,13 @@ export default async function BudgetsPage() {
     <>
       <Title title="Budgets" />
       <ContentLayout>
-        <BudgetsList budgets={budgets} />
+        <div>
+          <span>Add new budget form</span>
+        </div>
+        <div>
+          <BudgetsList budgets={budgets} />
+        </div>
       </ContentLayout>
-      <ActionButton href="/budgets/add-new" text="Add new" />
     </>
   );
 }
