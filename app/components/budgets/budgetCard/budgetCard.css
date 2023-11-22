@@ -14,15 +14,7 @@
   }
 
   .budget-information {
-    @apply flex items-center mr-12 last:mr-0;
-  }
-
-  .remove-icon-wrapper {
-    @apply rounded-xl bg-red-600 p-3 fill-white text-white z-10 transition duration-150 ease-in-out hover:shadow-xl;
-  }
-
-  .remove-icon {
-    @apply w-6 h-6;
+    @apply flex items-center mr-4 last:mr-0;
   }
 
   .budget-total-amount-arrow {
@@ -35,5 +27,9 @@
 
   .budget-date-icon {
     @apply mr-2 w-6 h-6;
+  }
+
+  .budget-card-icons-wrapper {
+    @apply flex items-center;
   }
 }

@@ -1,7 +1,7 @@
-import { IoTrashBinOutline } from "react-icons/io5";
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
 import { MdDateRange } from "react-icons/md";
 import { Card } from "../../common";
+import { BudgetCardActionButtons } from "./budgetCardActionButtons";
 
 import "./budgetCard.css";
 
@@ -13,6 +13,7 @@ export interface BudgetCardProps {
   date: string;
 }
 export function BudgetCard({
+  id,
   name,
   totalAmount,
   amountSpent,
@@ -42,8 +43,8 @@ export function BudgetCard({
         </div>
       </div>
 
-      <div className="remove-icon-wrapper">
-        <IoTrashBinOutline className="remove-icon" />
+      <div className="budget-card-icons-wrapper">
+        <BudgetCardActionButtons id={id} />
       </div>
     </Card>
   );

@@ -1,0 +1,15 @@
+@tailwind components;
+
+@layer components {
+  .view-more-details-wrapper {
+    @apply cursor-pointer rounded-xl mr-4 bg-green-600 p-3 fill-white text-white z-10 transition duration-150 ease-in-out hover:shadow-[0_10px_50px_rgba(240,_46,_170,_0.7)] hover:shadow-green-500;
+  }
+
+  .remove-icon-wrapper {
+    @apply cursor-pointer rounded-xl bg-red-600 p-3 fill-white text-white z-10 transition duration-150 ease-in-out hover:shadow-[0_10px_50px_rgba(240,_46,_170,_0.7)] hover:shadow-red-600;
+  }
+
+  .budget-card-action-icon {
+    @apply w-6 h-6;
+  }
+}
