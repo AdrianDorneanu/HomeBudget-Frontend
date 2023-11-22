@@ -19,15 +19,17 @@ export function BudgetCard({
   return (
     <Card>
       <div className="budget-card-content-wrapper">
-        <h1 className="budget-name">{name}</h1>
+        <h1 data-testid="budget-name" className="budget-name">
+          {name}
+        </h1>
         <div className="budget-informations-list">
           <div className="budget-information">
             <AiOutlineArrowUp className="budget-total-amount-arrow" />
-            <span>{totalAmount} RON</span>
+            <span data-testid="budget-total-amount">{totalAmount} RON</span>
           </div>
           <div className="budget-information">
             <AiOutlineArrowDown className="budget-amount-spent-arrow" />
-            <span>{amountSpent} RON</span>
+            <span data-testid="budget-amount-spent">{amountSpent} RON</span>
           </div>
         </div>
       </div>
