@@ -25,10 +25,6 @@
     @apply fill-red-600 w-6 h-6 mr-1;
   }
 
-  .budget-date-icon {
-    @apply mr-2 w-6 h-6;
-  }
-
   .budget-card-icons-wrapper {
     @apply flex items-center;
   }

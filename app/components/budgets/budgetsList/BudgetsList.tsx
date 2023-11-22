@@ -20,14 +20,13 @@ export function BudgetsList({ budgets }: BudgetsListProps) {
   return (
     <>
       {budgets.map(
-        ({ id, name, totalAmount, amountSpent, date }: BudgetCardProps) => (
+        ({ id, name, totalAmount, amountSpent }: BudgetCardProps) => (
           <BudgetCard
             key={name}
             id={id}
             name={name}
             totalAmount={totalAmount}
             amountSpent={amountSpent}
-            date={date}
           />
         )
       )}

@@ -1,5 +1,4 @@
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
-import { MdDateRange } from "react-icons/md";
 import { Card } from "../../common";
 import { BudgetCardActionButtons } from "./budgetCardActionButtons";
 
@@ -10,19 +9,13 @@ export interface BudgetCardProps {
   name: string;
   totalAmount: number;
   amountSpent: number;
-  date: string;
 }
 export function BudgetCard({
   id,
   name,
   totalAmount,
   amountSpent,
-  date,
 }: BudgetCardProps) {
-  const formattedDate = new Date(date)
-    .toLocaleDateString("ro-RO")
-    .substring(0, 10);
-
   return (
     <Card>
       <div className="budget-card-content-wrapper">
@@ -35,10 +28,6 @@ export function BudgetCard({
           <div className="budget-information">
             <AiOutlineArrowDown className="budget-amount-spent-arrow" />
             <span>{amountSpent} RON</span>
-          </div>
-          <div className="budget-information">
-            <MdDateRange className="budget-date-icon" />
-            <span>{formattedDate}</span>
           </div>
         </div>
       </div>
