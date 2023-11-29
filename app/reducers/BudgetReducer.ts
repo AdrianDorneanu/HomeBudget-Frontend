@@ -15,6 +15,7 @@ interface ReducerAction {
 export enum REDUCER_ACTION_TYPE {
   SET_BUDGETS,
   ADD_BUDGET,
+  REMOVE_BUDGET,
 }
 
 export const initialState: State = {
@@ -29,6 +30,9 @@ function budgetReducer(state: State, action: ReducerAction) {
       return { ...state, budgets: payload.budgets };
     }
     case REDUCER_ACTION_TYPE.ADD_BUDGET: {
+      return { ...state, budgets: payload.budgets };
+    }
+    case REDUCER_ACTION_TYPE.REMOVE_BUDGET: {
       return { ...state, budgets: payload.budgets };
     }
     default: {

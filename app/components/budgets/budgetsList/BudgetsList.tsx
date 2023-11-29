@@ -30,11 +30,12 @@ export function BudgetsList() {
 
       throw new Error("Something went wrong! - getAllBudgetsByMonth");
     }
-  }, [setBudgets, month]);
+  }, [month, setBudgets]);
 
   useEffect(() => {
     fetchData();
-  }, [month, fetchData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [month]);
 
   return (
     <>

@@ -33,10 +33,24 @@ export function BudgetProvider({ children }: BudgetProviderProps) {
     });
   }
 
+  function deleteBudget(id: string) {
+    const updatedBudgets = state.budgets.filter(
+      (budget: Budget) => budget.id !== id
+    );
+
+    dispatch({
+      type: REDUCER_ACTION_TYPE.REMOVE_BUDGET,
+      payload: {
+        budgets: updatedBudgets,
+      },
+    });
+  }
+
   const value = {
     budgets: state.budgets,
     addBudget,
     setBudgets,
+    deleteBudget,
   };
 
   return (
