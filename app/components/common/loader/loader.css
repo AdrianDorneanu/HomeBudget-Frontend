@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .spinner {
+    @apply border-gray-300 h-14 w-14 animate-spin rounded-full border-8 border-t-green-600;
+  }
+}

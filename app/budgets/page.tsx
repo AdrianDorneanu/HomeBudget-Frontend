@@ -1,10 +1,6 @@
-import Link from "next/link";
 import { BudgetsList, ContentLayout, Title, ActionButton } from "../components";
-import { getAllBudgets } from "../datalayer";
 
-export default async function BudgetsPage() {
-  const budgets = await getAllBudgets();
-
+export default function BudgetsPage() {
   return (
     <>
       <Title title="Budgets" />
@@ -13,7 +9,7 @@ export default async function BudgetsPage() {
           <span>Add new budget form</span>
         </div>
         <div>
-          <BudgetsList budgets={budgets} />
+          <BudgetsList />
         </div>
       </ContentLayout>
     </>
