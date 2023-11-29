@@ -12,7 +12,7 @@ import { ToastContainer } from "react-toastify";
 
 export function BudgetsList() {
   const [isLoading, setIsLoading] = useState(true);
-  const { budgets, setBudgets, month, setMonth }: any = useBudget();
+  const { budgets, setBudgets, month, setMonth } = useBudget();
 
   const fetchData = useCallback(async () => {
     try {
@@ -48,7 +48,7 @@ export function BudgetsList() {
           isClearable
           dateFormat="MMMM yyyy"
           showMonthYearPicker
-          onChange={(newMonth) => setMonth(newMonth)}
+          onChange={(newMonth) => setMonth(newMonth as Date)}
         />
       </div>
 

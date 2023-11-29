@@ -7,7 +7,16 @@ import budgetReducer, {
   REDUCER_ACTION_TYPE,
 } from "../reducers/BudgetReducer";
 
-const BudgetContext = createContext(initialState);
+interface Context {
+  budgets: Budget[];
+  month: Date;
+  addBudget: (budget: Budget) => void;
+  setBudgets: (budgets: Budget[]) => void;
+  deleteBudget: (id: string) => void;
+  setMonth: (month: Date) => void;
+}
+
+const BudgetContext = createContext<Context>(initialState as any);
 
 interface BudgetProviderProps {
   children: React.ReactNode;
@@ -55,7 +64,7 @@ export function BudgetProvider({ children }: BudgetProviderProps) {
     });
   }
 
-  const value = {
+  const value: Context = {
     budgets: state.budgets,
     month: state.month,
     addBudget,
