@@ -2,6 +2,6 @@
 
 @layer components {
   .content-wrapper {
-    @apply flex [&>div:first-child]:w-1/2 [&>div:first-child]:mr-6 [&>div:last-child]:w-1/2;
+    @apply flex [&>div:first-child]:w-1/2 [&>div:first-child]:mr-20 [&>div:last-child]:w-1/2;
   }
 }

@@ -1,4 +1,9 @@
-import { BudgetsList, ContentLayout, Title, ActionButton } from "../components";
+import {
+  BudgetsList,
+  ContentLayout,
+  Title,
+  AddNewBudgetForm,
+} from "../components";
 
 export default function BudgetsPage() {
   return (
@@ -6,7 +11,7 @@ export default function BudgetsPage() {
       <Title title="Budgets" />
       <ContentLayout>
         <div>
-          <span>Add new budget form</span>
+          <AddNewBudgetForm />
         </div>
         <div>
           <BudgetsList />

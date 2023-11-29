@@ -8,6 +8,7 @@ import { useBudget } from "@/app/contexts";
 
 import "react-datepicker/dist/react-datepicker.css";
 import "./budgetsList.css";
+import { ToastContainer } from "react-toastify";
 
 export function BudgetsList() {
   const [month, setMonth] = useState<Date | null>(new Date());
@@ -78,6 +79,8 @@ export function BudgetsList() {
           />
         )
       )}
+
+      <ToastContainer position="top-right" newestOnTop />
     </>
   );
 }

@@ -18,12 +18,12 @@ export function BudgetProvider({ children }: BudgetProviderProps) {
   function setBudgets(budgets: Budget[]) {
     dispatch({
       type: REDUCER_ACTION_TYPE.SET_BUDGETS,
-      payload: { budgets: budgets },
+      payload: { budgets },
     });
   }
 
   function addBudget(budget: Budget) {
-    const updatedBudgets = state.budgets.concat(budget);
+    const updatedBudgets = [...state.budgets, budget];
 
     dispatch({
       type: REDUCER_ACTION_TYPE.ADD_BUDGET,
