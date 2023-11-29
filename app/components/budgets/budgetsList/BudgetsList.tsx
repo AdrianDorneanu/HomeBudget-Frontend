@@ -17,7 +17,7 @@ export function BudgetsList() {
   const fetchData = useCallback(async () => {
     try {
       const response = await fetch(
-        `http://localhost:7127/api/budget?date=${month?.toISOString()}`
+        `${process.env.BASE_API_URL}/api/budget?date=${month?.toISOString()}`
       );
       const data = await response.json();
 
