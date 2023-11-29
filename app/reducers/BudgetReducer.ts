@@ -6,6 +6,7 @@ export interface Budget {
 }
 interface State {
   budgets: Budget[];
+  month: Date;
 }
 interface ReducerAction {
   type: REDUCER_ACTION_TYPE;
@@ -16,10 +17,12 @@ export enum REDUCER_ACTION_TYPE {
   SET_BUDGETS,
   ADD_BUDGET,
   REMOVE_BUDGET,
+  SET_MONTH,
 }
 
 export const initialState: State = {
   budgets: [],
+  month: new Date(),
 };
 
 function budgetReducer(state: State, action: ReducerAction) {
@@ -34,6 +37,9 @@ function budgetReducer(state: State, action: ReducerAction) {
     }
     case REDUCER_ACTION_TYPE.REMOVE_BUDGET: {
       return { ...state, budgets: payload.budgets };
+    }
+    case REDUCER_ACTION_TYPE.SET_MONTH: {
+      return { ...state, month: payload.month };
     }
     default: {
       return state;

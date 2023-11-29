@@ -11,14 +11,13 @@ import "./budgetsList.css";
 import { ToastContainer } from "react-toastify";
 
 export function BudgetsList() {
-  const [month, setMonth] = useState<Date | null>(new Date());
   const [isLoading, setIsLoading] = useState(true);
-  const { budgets, setBudgets }: any = useBudget();
+  const { budgets, setBudgets, month, setMonth }: any = useBudget();
 
   const fetchData = useCallback(async () => {
     try {
       const response = await fetch(
-        `${process.env.BASE_API_URL}/api/budget?date=${month?.toISOString()}`
+        `${process.env.BASE_API_URL}/api/budget/${month?.toISOString()}`
       );
       const data = await response.json();
 

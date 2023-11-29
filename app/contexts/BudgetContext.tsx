@@ -46,11 +46,22 @@ export function BudgetProvider({ children }: BudgetProviderProps) {
     });
   }
 
+  function setMonth(month: Date) {
+    dispatch({
+      type: REDUCER_ACTION_TYPE.SET_MONTH,
+      payload: {
+        month,
+      },
+    });
+  }
+
   const value = {
     budgets: state.budgets,
+    month: state.month,
     addBudget,
     setBudgets,
     deleteBudget,
+    setMonth,
   };
 
   return (

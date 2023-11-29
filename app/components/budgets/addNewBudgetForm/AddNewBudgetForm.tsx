@@ -1,26 +1,23 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import DatePicker from "react-datepicker";
-
-import "react-datepicker/dist/react-datepicker.css";
-import "./addNewBudgetForm.css";
 import { addNewBudget } from "@/app/datalayer";
 import { useBudget } from "@/app/contexts";
 
+import "./addNewBudgetForm.css";
+
 export function AddNewBudgetForm() {
-  const [month, setMonth] = useState<Date | null>(new Date());
   const [name, setName] = useState("");
   const [totalAmount, setTotalAmount] = useState(0);
-  const { addBudget }: any = useBudget();
+  const { addBudget, month }: any = useBudget();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const newBudget = {
       name,
-      month,
       totalAmount,
+      month,
     };
 
     const data = await addNewBudget(newBudget);
@@ -52,24 +49,10 @@ export function AddNewBudgetForm() {
           type="number"
         />
       </div>
-      <div className="add-budget-input-wrapper">
-        <label className="add-budget-label">Month:</label>
-        <div className="datepicker-wrapper">
-          <DatePicker
-            className="budgets-datepicker"
-            id="budgets-datepicker"
-            selected={month}
-            isClearable
-            dateFormat="MMMM yyyy"
-            showMonthYearPicker
-            onChange={(newMonth) => setMonth(newMonth)}
-          />
-        </div>
-      </div>
 
       <button
         type="submit"
-        disabled={!name || !totalAmount || !month}
+        disabled={!name || !totalAmount}
         className="add-new-budget-button"
       >
         Add new
