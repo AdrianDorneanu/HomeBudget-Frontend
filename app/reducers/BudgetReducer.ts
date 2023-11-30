@@ -42,7 +42,7 @@ function budgetReducer(state: State, action: ReducerAction) {
       return { ...state, month: payload.month };
     }
     default: {
-      return state;
+      return { ...state };
     }
   }
 }

@@ -1,0 +1,11 @@
+@tailwind components;
+
+@layer components {
+  .person-icon {
+    @apply w-6 h-6 fill-yellow-600 mr-1;
+  }
+
+  .calendar-icon {
+    @apply w-6 h-6 fill-white mr-1;
+  }
+}

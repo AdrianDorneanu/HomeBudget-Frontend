@@ -21,7 +21,7 @@ describe("Budget", () => {
   it("should have the right budget total amount", () => {
     const { getByTestId } = render(<BudgetCard {...budget} />);
 
-    const totalAmount = getByTestId("budget-total-amount").textContent;
+    const totalAmount = getByTestId("total-amount").textContent;
 
     expect(totalAmount).toBe("2000 RON");
   });

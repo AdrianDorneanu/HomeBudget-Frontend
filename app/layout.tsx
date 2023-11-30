@@ -3,7 +3,7 @@ import { Poppins } from "next/font/google";
 import { NavBar } from "./components";
 
 import "./globals.css";
-import { BudgetProvider } from "./contexts";
+import { BudgetProvider, ExpenseProvider } from "./contexts";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -30,7 +30,9 @@ export default function RootLayout({
           <NavBar />
         </header>
         <div className="homepage-content-wrapper">
-          <BudgetProvider>{children}</BudgetProvider>
+          <BudgetProvider>
+            <ExpenseProvider>{children}</ExpenseProvider>
+          </BudgetProvider>
         </div>
       </body>
     </html>

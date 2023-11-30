@@ -1,5 +1,10 @@
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
-import { Card, CardInformations, CardTitle } from "../../common";
+import {
+  Card,
+  CardButtonsWrapper,
+  CardInformations,
+  CardTitle,
+} from "../../common";
 import { BudgetCardActionButtons } from "./budgetCardActionButtons";
 
 import "./budgetCard.css";
@@ -18,11 +23,9 @@ export function BudgetCard({
 }: BudgetCardProps) {
   const informations = [
     {
-      IconComponent: () => (
-        <AiOutlineArrowUp className="budget-total-amount-arrow" />
-      ),
+      IconComponent: () => <AiOutlineArrowUp className="total-amount-arrow" />,
       TextComponent: () => (
-        <span data-testid="budget-total-amount">{totalAmount} RON</span>
+        <span data-testid="total-amount">{totalAmount} RON</span>
       ),
     },
     {
@@ -42,9 +45,9 @@ export function BudgetCard({
         <CardInformations informations={informations} />
       </div>
 
-      <div className="budget-card-icons-wrapper">
+      <CardButtonsWrapper>
         <BudgetCardActionButtons id={id} />
-      </div>
+      </CardButtonsWrapper>
     </Card>
   );
 }
