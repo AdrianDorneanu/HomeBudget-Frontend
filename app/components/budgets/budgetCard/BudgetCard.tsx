@@ -41,7 +41,7 @@ export function BudgetCard({
   return (
     <Card>
       <div>
-        <CardTitle name={name} />
+        <CardTitle name={`${name} - ${totalAmount + amountSpent} RON`} />
         <CardInformations informations={informations} />
       </div>
 
