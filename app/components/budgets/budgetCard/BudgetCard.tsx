@@ -18,7 +18,7 @@ export function BudgetCard({
 }: BudgetCardProps) {
   return (
     <Card>
-      <div className="budget-card-content-wrapper">
+      <div>
         <h1 data-testid="budget-name" className="budget-name">
           {name}
         </h1>
