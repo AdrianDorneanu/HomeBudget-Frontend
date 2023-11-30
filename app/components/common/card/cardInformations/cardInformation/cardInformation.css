@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .card-information {
+    @apply flex items-center mr-4 last:mr-0;
+  }
+}

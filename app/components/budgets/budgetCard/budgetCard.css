@@ -1,18 +1,6 @@
 @tailwind components;
 
 @layer components {
-  .budget-name {
-    @apply flex items-center font-semibold text-3xl mb-6;
-  }
-
-  .budget-informations-list {
-    @apply flex items-center font-semibold;
-  }
-
-  .budget-information {
-    @apply flex items-center mr-4 last:mr-0;
-  }
-
   .budget-total-amount-arrow {
     @apply fill-green-600 w-6 h-6 mr-1 ml-[-4px];
   }

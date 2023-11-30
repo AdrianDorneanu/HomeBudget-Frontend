@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .card-informations-wrapper {
+    @apply flex items-center font-semibold;
+  }
+}
