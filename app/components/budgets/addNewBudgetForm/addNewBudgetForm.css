@@ -14,7 +14,7 @@
   }
 
   .add-new-budget-button {
-    @apply flex justify-center ml-auto bg-green-600 border-2 w-32 border-green-600 text-center px-4 py-2 rounded-xl text-white font-semibold transition duration-200 ease-in hover:bg-transparent hover:text-black disabled:bg-slate-300 disabled:border-slate-300 disabled:text-slate-900;
+    @apply flex justify-center ml-auto bg-green-600 border-2 w-32 border-green-600 text-center px-4 py-2 rounded-xl text-white font-semibold transition duration-200 ease-in hover:bg-transparent hover:text-black disabled:bg-slate-300 disabled:border-slate-300 disabled:text-slate-900 disabled:cursor-not-allowed;
   }
 
   .datepicker-wrapper {
