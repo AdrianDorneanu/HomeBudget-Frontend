@@ -4,3 +4,4 @@ export * from "./addNewBudget";
 export * from "./getBudgetById";
 export * from "./getExpensesByBudgetId";
 export * from "./deleteExpenseById";
+export * from "./getBudgetsByMonth";

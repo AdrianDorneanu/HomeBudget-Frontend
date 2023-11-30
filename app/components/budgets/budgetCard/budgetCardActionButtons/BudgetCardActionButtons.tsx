@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CgDetailsMore } from "react-icons/cg";
 import { IoTrashBinOutline } from "react-icons/io5";
-import { ToastContainer } from "react-toastify";
+// import { ToastContainer } from "react-toastify";
 import { removeBudget } from "@/app/datalayer";
 import { useBudget } from "@/app/contexts";
 
@@ -32,8 +32,6 @@ export function BudgetCardActionButtons({ id }: BudgetCardActionButtonsProps) {
           className="budget-card-action-icon"
         />
       </div>
-
-      <ToastContainer position="top-right" newestOnTop />
     </>
   );
 }

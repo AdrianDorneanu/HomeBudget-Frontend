@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useReducer, useContext } from "react";
+import { createContext, useReducer, useContext, useCallback } from "react";
 import budgetReducer, {
   initialState,
   Budget,
@@ -24,45 +24,55 @@ interface BudgetProviderProps {
 export function BudgetProvider({ children }: BudgetProviderProps) {
   const [state, dispatch] = useReducer(budgetReducer, initialState);
 
-  function setBudgets(budgets: Budget[]) {
+  const setBudgets = useCallback((budgets: Budget[]) => {
     dispatch({
       type: REDUCER_ACTION_TYPE.SET_BUDGETS,
       payload: { budgets },
     });
-  }
+  }, []);
 
-  function addBudget(budget: Budget) {
-    const updatedBudgets = [...state.budgets, budget];
+  const addBudget = useCallback(
+    (budget: Budget) => {
+      const { budgets } = state;
 
-    dispatch({
-      type: REDUCER_ACTION_TYPE.ADD_BUDGET,
-      payload: {
-        budgets: updatedBudgets,
-      },
-    });
-  }
+      const updatedBudgets = [...budgets, budget];
 
-  function deleteBudget(id: string) {
-    const updatedBudgets = state.budgets.filter(
-      (budget: Budget) => budget.id !== id
-    );
+      dispatch({
+        type: REDUCER_ACTION_TYPE.ADD_BUDGET,
+        payload: {
+          budgets: updatedBudgets,
+        },
+      });
+    },
+    [state]
+  );
 
-    dispatch({
-      type: REDUCER_ACTION_TYPE.REMOVE_BUDGET,
-      payload: {
-        budgets: updatedBudgets,
-      },
-    });
-  }
+  const deleteBudget = useCallback(
+    (id: string) => {
+      const { budgets } = state;
 
-  function setMonth(month: Date) {
+      const updatedBudgets = budgets.filter(
+        (budget: Budget) => budget.id !== id
+      );
+
+      dispatch({
+        type: REDUCER_ACTION_TYPE.REMOVE_BUDGET,
+        payload: {
+          budgets: updatedBudgets,
+        },
+      });
+    },
+    [state]
+  );
+
+  const setMonth = useCallback((month: Date) => {
     dispatch({
       type: REDUCER_ACTION_TYPE.SET_MONTH,
       payload: {
         month,
       },
     });
-  }
+  }, []);
 
   const value: Context = {
     budgets: state.budgets,

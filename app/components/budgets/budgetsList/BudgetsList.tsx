@@ -2,13 +2,14 @@
 
 import { useCallback, useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
+import { ToastContainer } from "react-toastify";
+import { useBudget } from "@/app/contexts";
+import { getBudgetsByMonth } from "@/app/datalayer";
 import { BudgetCard, BudgetCardProps } from "../budgetCard";
 import { Loader } from "../../common";
-import { useBudget } from "@/app/contexts";
 
 import "react-datepicker/dist/react-datepicker.css";
 import "./budgetsList.css";
-import { ToastContainer } from "react-toastify";
 
 export function BudgetsList() {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,10 +17,7 @@ export function BudgetsList() {
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await fetch(
-        `${process.env.BASE_API_URL}/api/budget/${month?.toISOString()}`
-      );
-      const data = await response.json();
+      const data = await getBudgetsByMonth(month);
 
       setBudgets(data);
       setIsLoading(false);
@@ -34,8 +32,7 @@ export function BudgetsList() {
 
   useEffect(() => {
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [month]);
+  }, [month, fetchData]);
 
   return (
     <>
