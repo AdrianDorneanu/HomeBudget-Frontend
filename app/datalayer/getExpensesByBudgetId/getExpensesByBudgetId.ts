@@ -1,7 +1,7 @@
 export async function getExpensesByBudgetId(id: string) {
   try {
     const response = await fetch(
-      `${process.env.BASE_API_URL}/api/expenses/${id}`
+      `${process.env.BASE_API_URL}/api/expense/${id}`
     );
 
     if (response.ok) {

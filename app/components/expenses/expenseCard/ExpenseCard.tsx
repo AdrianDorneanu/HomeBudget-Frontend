@@ -1,18 +1,22 @@
-import { Card } from "../../common";
+import { Card, CardTitle } from "../../common";
 
 export interface ExpenseCardProps {
+  id: string;
   name: string;
   buyer: string;
   amount: number;
   dateOfBuying: Date;
 }
-export function ExpenseCard() {
+export function ExpenseCard({
+  name,
+  buyer,
+  amount,
+  dateOfBuying,
+}: ExpenseCardProps) {
   return (
     <Card>
       <div>
-        <h1 data-testid="expense-name" className="expense-name">
-          Pantaloni munte
-        </h1>
+        <CardTitle name={name} />
       </div>
     </Card>
   );

@@ -1,5 +1,5 @@
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
-import { Card } from "../../common";
+import { Card, CardTitle } from "../../common";
 import { BudgetCardActionButtons } from "./budgetCardActionButtons";
 
 import "./budgetCard.css";
@@ -19,9 +19,7 @@ export function BudgetCard({
   return (
     <Card>
       <div>
-        <h1 data-testid="budget-name" className="budget-name">
-          {name}
-        </h1>
+        <CardTitle name={name} />
         <div className="budget-informations-list">
           <div className="budget-information">
             <AiOutlineArrowUp className="budget-total-amount-arrow" />

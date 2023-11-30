@@ -19,7 +19,7 @@ export default async function BudgetDetailsPage({
       <ContentLayout>
         <div>Add new expense form</div>
         <div>
-          <ExpensesList />
+          <ExpensesList budgetId={id} />
         </div>
       </ContentLayout>
     </>

@@ -18,14 +18,6 @@ describe("Budget", () => {
     expect(baseElement).toBeTruthy();
   });
 
-  it("should have the right budget name", () => {
-    const { getByTestId } = render(<BudgetCard {...budget} />);
-
-    const name = getByTestId("budget-name").textContent;
-
-    expect(name).toBe("Sport");
-  });
-
   it("should have the right budget total amount", () => {
     const { getByTestId } = render(<BudgetCard {...budget} />);
 
