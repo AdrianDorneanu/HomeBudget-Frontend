@@ -1,9 +1,27 @@
-import { Title } from "@/app/components";
+import { ContentLayout, ExpensesList, Title } from "@/app/components";
+import { getBudgetById } from "@/app/datalayer";
 
-export default function BudgetDetailsPage() {
+interface BudgetDetailsPageProps {
+  params: {
+    id: string;
+  };
+}
+export default async function BudgetDetailsPage({
+  params: { id },
+}: BudgetDetailsPageProps) {
+  const budget = await getBudgetById(id);
+
+  const { name } = budget;
+
   return (
     <>
-      <Title title="Budget details" />
+      <Title title={name} />
+      <ContentLayout>
+        <div>Add new expense form</div>
+        <div>
+          <ExpensesList />
+        </div>
+      </ContentLayout>
     </>
   );
 }

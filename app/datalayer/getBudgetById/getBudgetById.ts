@@ -1,6 +1,4 @@
-import { redirect } from "next/navigation";
-
-export async function getBudgetByid(id: string) {
+export async function getBudgetById(id: string) {
   try {
     const response = await fetch(
       `${process.env.BASE_API_URL}/api/budget/${id}`
