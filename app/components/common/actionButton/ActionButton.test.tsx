@@ -13,7 +13,7 @@ describe("ActionButton", () => {
       <ActionButton disabled={false} text="I am a button" />
     );
 
-    const buttonText = getByTestId("action-button-text").textContent;
+    const buttonText = getByTestId("action-button").textContent;
 
     expect(buttonText).toBe("I am a button");
   });

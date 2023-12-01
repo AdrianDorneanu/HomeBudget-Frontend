@@ -6,7 +6,12 @@ export interface ActionButtonProps {
 }
 export function ActionButton({ text, disabled }: ActionButtonProps) {
   return (
-    <button type="submit" disabled={disabled} className="action-button">
+    <button
+      data-testid="action-button"
+      type="submit"
+      disabled={disabled}
+      className="action-button"
+    >
       {text}
     </button>
   );
