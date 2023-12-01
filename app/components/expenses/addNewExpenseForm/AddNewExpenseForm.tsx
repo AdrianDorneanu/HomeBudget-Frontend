@@ -2,7 +2,6 @@
 
 import { FormEvent, useState } from "react";
 import DatePicker from "react-datepicker";
-import { toast } from "react-toastify";
 import { getFirstDayOfTheMonth, getLastDayOfTheMonth } from "../../../utils";
 import { ActionButton } from "../../common";
 import { useExpense } from "../../../contexts";
@@ -89,7 +88,6 @@ export function AddNewExpenseForm({ budgetId, dateOfBudgetCreation }: AddNewExpe
             placeholderText="Select the date of buying"
             id="expense-date-of-buying"
             selected={dateOfBuying}
-            isClearable
             minDate={firstDayOfTheMonth}
             maxDate={lastDayOfTheMonth}
             onChange={(newDate) => setDateOfBuying(newDate as Date)}
