@@ -3,13 +3,14 @@
 import { FormEvent, useState } from "react";
 import { addNewBudget } from "@/app/datalayer";
 import { useBudget } from "@/app/contexts";
+import { ActionButton } from "../../common";
 
 import "./addNewBudgetForm.css";
 
 export function AddNewBudgetForm() {
   const [name, setName] = useState("");
   const [totalAmount, setTotalAmount] = useState(0);
-  const { addBudget, month }: any = useBudget();
+  const { addBudget, date }: any = useBudget();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -17,7 +18,7 @@ export function AddNewBudgetForm() {
     const newBudget = {
       name,
       totalAmount,
-      month,
+      month: date,
     };
 
     const data = await addNewBudget(newBudget);
@@ -50,13 +51,10 @@ export function AddNewBudgetForm() {
         />
       </div>
 
-      <button
-        type="submit"
+      <ActionButton
+        text="Add new"
         disabled={!name || !totalAmount}
-        className="add-new-budget-button"
-      >
-        Add new
-      </button>
+      />
     </form>
   );
 }

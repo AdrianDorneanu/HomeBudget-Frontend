@@ -9,11 +9,11 @@ import budgetReducer, {
 
 interface Context {
   budgets: Budget[];
-  month: Date;
+  date: Date;
   addBudget: (budget: Budget) => void;
   setBudgets: (budgets: Budget[]) => void;
   deleteBudget: (id: string) => void;
-  setMonth: (month: Date) => void;
+  setDate: (date: Date) => void;
 }
 
 const BudgetContext = createContext<Context>(initialState as any);
@@ -65,22 +65,22 @@ export function BudgetProvider({ children }: BudgetProviderProps) {
     [state]
   );
 
-  const setMonth = useCallback((month: Date) => {
+  const setDate = useCallback((date: Date) => {
     dispatch({
-      type: REDUCER_ACTION_TYPE.SET_MONTH,
+      type: REDUCER_ACTION_TYPE.SET_DATE,
       payload: {
-        month,
+        date,
       },
     });
   }, []);
 
   const value: Context = {
     budgets: state.budgets,
-    month: state.month,
+    date: state.date,
     addBudget,
     setBudgets,
     deleteBudget,
-    setMonth,
+    setDate,
   };
 
   return (

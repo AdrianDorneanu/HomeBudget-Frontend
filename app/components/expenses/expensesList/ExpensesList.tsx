@@ -5,6 +5,7 @@ import { useExpense } from "@/app/contexts";
 import { getExpensesByBudgetId } from "@/app/datalayer";
 import { Loader } from "../../common";
 import { ExpenseCard, ExpenseCardProps } from "../expenseCard";
+import { ToastContainer } from "react-toastify";
 
 interface ExpensesListProps {
   budgetId: string;
@@ -52,6 +53,8 @@ export function ExpensesList({ budgetId }: ExpensesListProps) {
       {expenses.map((expense: ExpenseCardProps) => (
         <ExpenseCard key={expense.id} {...expense} />
       ))}
+
+      <ToastContainer position="top-right" newestOnTop />
     </>
   );
 }

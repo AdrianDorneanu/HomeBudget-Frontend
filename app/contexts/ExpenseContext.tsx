@@ -7,7 +7,8 @@ import expenseReducer, {
   REDUCER_ACTION_TYPE_EXPENSES,
   expensesInitialState,
 } from "../reducers/ExpenseReducer";
-import { deleteExpenseById } from "../datalayer";
+import { deleteExpenseById, addNewExpense } from "../datalayer";
+import { isObjectEmpty } from "../utils";
 
 const ExpenseContext = createContext(expensesInitialState);
 
@@ -17,7 +18,7 @@ interface ExpenseProviderProps {
 export function ExpenseProvider({ children }: ExpenseProviderProps) {
   const [state, dispatch] = useReducer(expenseReducer, expensesInitialState);
 
-  const setExpenses = useCallback((expenses: Expense[]) => {
+  const setExpenses = useCallback((expenses: Expense[]): void => {
     dispatch({
       type: REDUCER_ACTION_TYPE_EXPENSES.SET_EXPENSES,
       payload: { expenses },
@@ -25,7 +26,7 @@ export function ExpenseProvider({ children }: ExpenseProviderProps) {
   }, []);
 
   const deleteExpense = useCallback(
-    async (id: string) => {
+    async (id: string): Promise<void> => {
       const { expenses } = state;
 
       /**
@@ -42,7 +43,7 @@ export function ExpenseProvider({ children }: ExpenseProviderProps) {
           (expense: Expense) => expense.id !== deletedExpense.id
         );
 
-        toast(`Successfully deleted budget ${deletedExpense.name}`, {
+        toast(`Successfully deleted expense ${deletedExpense.name}`, {
           type: "success",
         });
 
@@ -55,10 +56,38 @@ export function ExpenseProvider({ children }: ExpenseProviderProps) {
     [state]
   );
 
+  const addExpense = useCallback(async (newExpense: Expense): Promise<void> => {
+    const { expenses } = state;
+
+    /**
+     * Add expense to the database
+     */
+    const data = await addNewExpense(newExpense);
+
+    /**
+     * Add expense to the global state
+     */
+    if (isObjectEmpty(data)) {
+      toast("Something went wrong!", { type: "error" });
+    } else {
+      const updatedExpenses = [...expenses, newExpense];
+
+      dispatch({
+        type: REDUCER_ACTION_TYPE_EXPENSES.ADD_EXPENSE,
+        payload: { expenses: updatedExpenses }
+      });
+
+      toast(`Successfully added expense ${newExpense.name}`, {
+        type: "success",
+      });
+    }
+  }, [state]);
+
   const value = {
     expenses: state.expenses,
     setExpenses,
     deleteExpense,
+    addExpense,
   };
 
   return (

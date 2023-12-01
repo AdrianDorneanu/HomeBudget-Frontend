@@ -16,14 +16,14 @@ export default async function BudgetDetailsPage({
 }: BudgetDetailsPageProps) {
   const budget = await getBudgetById(id);
 
-  const { name } = budget;
+  const { name, date } = budget;
 
   return (
     <>
       <Title title={name} />
       <ContentLayout>
         <div>
-          <AddNewExpenseForm budgetId={id} />
+          <AddNewExpenseForm budgetId={id} dateOfBudgetCreation={date} />
         </div>
         <div>
           <ExpensesList budgetId={id} />

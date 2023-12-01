@@ -13,11 +13,11 @@ import "./budgetsList.css";
 
 export function BudgetsList() {
   const [isLoading, setIsLoading] = useState(true);
-  const { budgets, setBudgets, month, setMonth } = useBudget();
+  const { budgets, setBudgets, date, setDate } = useBudget();
 
   const fetchData = useCallback(async () => {
     try {
-      const data = await getBudgetsByMonth(month);
+      const data = await getBudgetsByMonth(date);
 
       setBudgets(data);
       setIsLoading(false);
@@ -28,11 +28,11 @@ export function BudgetsList() {
 
       throw new Error("Something went wrong! - getAllBudgetsByMonth");
     }
-  }, [month, setBudgets]);
+  }, [date, setBudgets]);
 
   useEffect(() => {
     fetchData();
-  }, [month, fetchData]);
+  }, [date, fetchData]);
 
   return (
     <>
@@ -41,11 +41,11 @@ export function BudgetsList() {
         <DatePicker
           className="budgets-datepicker"
           id="budgets-datepicker"
-          selected={month}
+          selected={date}
           isClearable
           dateFormat="MMMM yyyy"
           showMonthYearPicker
-          onChange={(newMonth) => setMonth(newMonth as Date)}
+          onChange={(newDate) => setDate(newDate as Date)}
         />
       </div>
 

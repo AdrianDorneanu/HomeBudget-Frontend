@@ -5,3 +5,4 @@ export * from "./getBudgetById";
 export * from "./getExpensesByBudgetId";
 export * from "./deleteExpenseById";
 export * from "./getBudgetsByMonth";
+export * from "./addNewExpense";
