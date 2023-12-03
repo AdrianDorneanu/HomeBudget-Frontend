@@ -4,7 +4,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupCommand>npm run dev</StartupCommand>
-    <JavaScriptTestRoot>C:\Users\adriando\Projects\HomeBudget-Frontend\</JavaScriptTestRoot>
+    <JavaScriptTestRoot>app\</JavaScriptTestRoot>
     <JavaScriptTestFramework>Jest</JavaScriptTestFramework>
     <BuildCommand>npm run build</BuildCommand>
     <BuildOutputFolder>.\dist</BuildOutputFolder>
@@ -14,4 +14,7 @@
   <ItemGroup>
     <None Include=".vscode\launch.json" />
   </ItemGroup>
+  <Target Name="VSTest">
+    <Exec Command="npm run test" /> <!-- Test explorer wouldn't run this command -->
+  </Target>
 </Project>
