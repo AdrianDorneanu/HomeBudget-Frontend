@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/0.5.174023-alpha">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>a9857706-c039-4a3c-8997-3f5756ae92a3</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupCommand>npm run dev</StartupCommand>
+    <JavaScriptTestRoot>C:\Users\adriando\Projects\HomeBudget-Frontend\</JavaScriptTestRoot>
+    <JavaScriptTestFramework>Jest</JavaScriptTestFramework>
+    <BuildCommand>npm run build</BuildCommand>
+    <BuildOutputFolder>.\dist</BuildOutputFolder>
+    <PackageJsonDirectory>C:\Users\adriando\Projects\HomeBudget-Frontend\</PackageJsonDirectory>
+    <StartupCommandWorkingDirectory>C:\Users\adriando\Projects\HomeBudget-Frontend\</StartupCommandWorkingDirectory>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include=".vscode\launch.json" />
+  </ItemGroup>
+</Project>
