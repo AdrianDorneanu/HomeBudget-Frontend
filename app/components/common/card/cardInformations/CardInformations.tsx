@@ -7,7 +7,7 @@ interface CardInformationsProps {
 }
 export function CardInformations({ informations }: CardInformationsProps) {
   return (
-    <div className="card-informations-wrapper">
+    <div>
       {informations.map((information, idx) => (
         <CardInformation key={idx} {...information} />
       ))}
